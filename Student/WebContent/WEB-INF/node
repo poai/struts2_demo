@@ -1,0 +1,37 @@
+proxool数据库连接池的用法
+
+	1.考jar文件  2+1+1 
+	
+	
+	2.在web.xml中配置当WEB容器启动的时候初始化连接池
+			<servlet>
+  				<servlet-name>ServletConfigurator</servlet-name>
+  				<servlet-class>org.logicalcobwebs.proxool.configuration.ServletConfigurator</servlet-class>
+  				<init-param>
+    				<param-name>xmlFile</param-name>
+    				<param-value>WEB-INF/proxool.xml</param-value>
+  				</init-param>
+  				<load-on-startup>1</load-on-startup>
+			</servlet> 
+	3.在WEB-INF下创建proxool.xml 连接池的配置文件			
+		<something-else-entirely>
+  			<proxool>
+    			<!-- 数据库的别名 -->
+    				<alias>xml-test</alias>
+    				<driver-url>jdbc:mysql://localhost:3306/students</driver-url>
+    				<driver-class>com.mysql.jdbc.Driver</driver-class>
+    				<driver-properties>
+      					<property name="user" value="root"/>
+      					<property name="password" value="root"/>
+    				</driver-properties>
+    				<maximum-connection-count>10</maximum-connection-count>
+    				<house-keeping-test-sql>select CURRENT_DATE</house-keeping-test-sql>
+  			</proxool>
+		</something-else-entirely>
+	4.修改DBUIL
+		.proxool.别名 
+		
+		conn = DriverManager.getConnection("proxool.xml-student");
+	
+	
+	

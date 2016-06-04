@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Mar 17 23:02:46 CST 2016
+org.eclipse.jst.jee.server\:Weixin=D\:\\apache-tomcat-8.0.30\\webapps\\Weixin
+org.eclipse.jst.jee.server\:NewsServer=D\:\\apache-tomcat-8.0.30\\webapps\\NewsServer

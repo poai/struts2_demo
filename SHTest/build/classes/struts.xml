@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<package name="default" namespace="/manage" extends="struts-default">
+	
+		<interceptors>
+			<interceptor-stack name="my">
+				<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="my"></default-interceptor-ref>
+		
+		<!-- 登录-->
+		
+		<action name="login" class="cn.com.yuting.manger.action.LoginAction">
+			<result name="success" type="redirect">/back/index.jsp</result>
+			<result name="error" type="redirect">/back/login.jsp</result>
+		</action>
+		
+		
+		<!-- 职位 -->
+		<action name="*_Job" class="cn.com.yuting.manger.action.JobAction" method="{1}">
+			<param name="pageSize">8</param>
+			<result name="success" >/back/{1}_Job.jsp</result>
+			<result name="add_Job" type="redirect">/back/{1}_Job.jsp</result>
+			<result name="delete_Job" type="redirectAction">query_Job</result>
+			<result name="save_Job" type="chain">editor_Job</result>
+			<result name="input" >/page_500.jsp</result>
+		</action>
+		<!-- 新闻 -->
+		<action name="*_News" class="cn.com.yuting.manger.action.NewsAction" method="{1}">
+			<param name="pageSize">8</param>
+			<result name="success" >/back/{1}_News.jsp</result>
+			<result name="add_News" type="redirect">/back/{1}_News.jsp</result>
+			<result name="delete_News" type="redirectAction">query_News</result>
+			<result name="save_News" type="chain">editor_News</result>
+			<result name="input" >/page_500.jsp</result>
+		</action>
+		<!-- 企业 -->
+		<action name="*_Enterprise" class="cn.com.yuting.manger.action.EnterpriseAction" method="{1}">
+			<param name="pageSize">8</param>
+			<result name="success" >/back/{1}_Enterprise.jsp</result>
+			<result name="add_Enterprise" type="redirect">/back/{1}_Enterprise.jsp</result>
+			<result name="delete_Enterprise" type="redirectAction">query_Enterprise</result>
+			<result name="save_Enterprise" type="chain">editor_Enterprise</result>
+			<result name="input" >/page_500.jsp</result>
+		</action>
+		
+				
+	</package>
+	<package name="home" namespace="/home" extends="struts-default">
+		<action name="index" class="cn.com.yuting.front.action.IndexAction">
+			<result>/front/index.jsp</result>
+		</action>
+		<!-- 详情 -->
+		<action name="*_Info" class="cn.com.yuting.front.action.InfoAction" method="{1}">
+			<result >/front/info.jsp</result>
+		</action>
+		<!-- 详情 -->
+		<action name="*_More" class="cn.com.yuting.front.action.MoreAction" method="{1}">
+			<result name="job">/front/more_job.jsp</result>
+			<result name="news">/front/more_news.jsp</result>
+		</action>
+	</package>
+</struts>

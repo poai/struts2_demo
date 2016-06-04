@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="css_xhtml"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="hello" extends="struts-default" namespace="/">
+		<!--配置全局结果 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+		<!--2.配置全局异常映射 -->
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.sql.SQLException"></exception-mapping>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+			 
+		<!--1.在Action中配置异常映射 -->
+		<action name="input" class="cn.com.zjf.action.InputAction">
+			<exception-mapping result="error" exception="java.lang.NumberFormatException"></exception-mapping>
+			<result>/index.jsp</result>
+			<result name="input">/input.jsp</result>
+		</action>
+		<action name="index" class="cn.com.zjf.action.IndexAction">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+</struts>

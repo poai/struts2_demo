@@ -1,0 +1,30 @@
+package cn.com.zjf.converter;
+
+import java.util.Map;
+
+import org.apache.struts2.util.StrutsTypeConverter;
+
+import cn.com.zjf.action.Student;
+
+public class StudentConverter extends StrutsTypeConverter{
+
+	@Override
+	public Object convertFromString(Map context, String[] values, Class toClass) {
+		
+		if(toClass==Student.class){
+			if(){
+				
+				
+			}
+			
+		}
+		
+		return null;
+	}
+
+	@Override
+	public String convertToString(Map context, Object o) {
+		return null;
+	}
+
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<!-- 关闭动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 启用开发者模式 **上线后需要删除 -->
+	<constant name="struts.devMode" value="true" />
+
+	<!-- 配置控制器模块 -->
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="index">
+			<result name="success">/WEB-INF/view/index.jsp</result>
+		</action>
+	</package>
+	<!-- 一个业务一个模块 -->
+	<package name="student" namespace="/student" extends="struts-default">
+
+		<!-- 定制拦截器 -->
+		<interceptors>
+			<interceptor-stack name="crud">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysinvokePrepare">false</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 学生信息添加界面 -->
+		<action name="input">
+			<result name="success">/WEB-INF/view/student/input.jsp</result>
+		</action>
+		<!-- 学生信息添加业务 -->
+		<action name="*" class="cn.com.cxsw.student.action.StudentAction"
+			method="{1}">
+			<interceptor-ref name="crud"></interceptor-ref>
+			<result name="add_success" type="redirectAction">
+				<param name="actionName">input</param>
+				<param name="namespace">/student</param>
+			</result>
+			<result name="list_success">/WEB-INF/view/student/list.jsp</result>
+			<result name="input">/WEB-INF/view/student/input.jsp</result>
+			<result name="delete_success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/student</param>
+			</result>
+			<result name="editor_success">/WEB-INF/view/student/editor.jsp</result>
+			<result name="save_success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/student</param>
+			</result>
+		</action>
+	</package>
+	<include file="other.xml"></include>
+</struts>

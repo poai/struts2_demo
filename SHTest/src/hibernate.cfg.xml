@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jobnews</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- C3P0 数据源-->
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.max_size">30</property>
+        <property name="hibernate.c3p0.min_size_size">5</property>
+        <property name="hibernate.c3p0.acquire_increment">3</property>
+        
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.show_sql">true</property>
+        
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        
+        
+        <!-- 注册映射关系 -->
+        
+        <mapping resource="cn/com/yuting/manger/bean/Job.hbm.xml"/>
+        <mapping resource="cn/com/yuting/manger/bean/News.hbm.xml"/>
+        <mapping resource="cn/com/yuting/manger/bean/Enterprise.hbm.xml"/>
+        <mapping resource="cn/com/yuting/manger/bean/Admin.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

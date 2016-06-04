@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.enable.SlashesInActionNames" value="true"></constant>
+	<!--通配符映射
+	
+		1.*  
+		
+			.标识一个或多个字符,不通配 "/"
+			.可以在   class, method,param,result 节点中使用{number} 访问第number个*所匹配的字符串
+			.{1}表示 第一个* 所通配的字符串 以此类推,{0} 表示完整的Action
+			.action 节点中可以通过 param 节点为Action类 配置初始化参数
+			. "."可以通配,通常情况下避免在actin中出现多个"."
+			.默认情况下 *只匹配最后一个"/"之后的URI
+			.如果有精确匹配则优先访问精确匹配的结果
+		2.**
+		
+			.标识一个或多个字符,通配 "/"
+			.启用"/"语法 struts.enable.SlashesInActionNames=true
+			
+		3.package 中的全局配置
+			.default-action-ref 默认的Action
+			.default-class-ref  默认的Action Class
+			.global-results 	全局结果
+			
+		4.DMI(动态方法调用)
+			.允许通过URL的形式访问Action中的方法
+			.默认情况下是禁止的,struts.enable.DynamicMethodInvocation=true
+			.示例  :add_Student!delete
+			.不建议使用动态方法调用，不安全
+	 -->
+	
+	<package name="zjf" namespace="/" extends="struts-default">
+		
+		<default-action-ref name="index"></default-action-ref>
+		
+		<default-class-ref class="cn.com.zjf.action.DefaultAction"></default-class-ref>
+		
+		<global-results>
+			<result name="index" type="redirect">/index.html</result>
+		</global-results>
+		
+		<!-- <action name="addStudent" class="cn.com.zjf.action.StudentAction" method="add">
+			<result>/success.jsp</result>
+		</action>
+		<action name="deleteStudent" class="cn.com.zjf.action.StudentAction" method="delete">
+			<result>/success.jsp</result>
+		</action>
+		<action name="editorStudent" class="cn.com.zjf.action.StudentAction" method="editor">
+			<result>/success.jsp</result>
+		</action> -->
+		
+		<!-- <action name="*Student" class="cn.com.zjf.action.StudentAction" method="{1}">
+			<param name="action">{0}</param>
+			<result>/WEB-INF/view/Student_{1}.jsp</result>
+		</action> -->
+		
+		<!-- 精确匹配 -->
+		<!-- <action name="addStudent" class="cn.com.zjf.action.StudentAction" method="add">
+			<result>/WEB-INF/view/Student_add.jsp</result>
+		</action> -->
+		
+		<!-- <action name="**Student" class="cn.com.zjf.action.StudentAction" method="{1}">
+			<param name="action">{0}</param>
+			<result>/WEB-INF/view/Student_{1}.jsp</result>
+		</action> -->
+		
+		<action name="*_*" class="cn.com.zjf.action.{2}Action" method="{1}">
+			<param name="action">{0}</param>
+			<result>/WEB-INF/view/{2}_{1}.jsp</result>
+		</action>
+		<action name="index" >
+		</action>
+	</package>
+
+</struts>

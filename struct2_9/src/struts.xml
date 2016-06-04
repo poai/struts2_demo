@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+
+
+	<package name="welcome" namespace="/" abstract="false" extends="struts-default">
+
+		<interceptors>
+			<interceptor-stack name="cxsw">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">token</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 配置默认的拦截器栈 -->
+		<default-interceptor-ref name="cxsw"></default-interceptor-ref>
+		<action name="emp-*" class="cn.com.zjf.action.EmployeeAction"
+			method="{1}">
+			<result name="{1}">/emp-{1}.jsp</result>
+			<result name="success" type="redirectAction">emp-list</result>
+		</action>
+	</package>
+</struts>

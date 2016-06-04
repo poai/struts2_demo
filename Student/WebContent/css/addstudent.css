@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.box {
+	
+}
+
+.box .title {
+	height: 40px;
+	background-color: #0099CC;
+	color: white;
+	font-size: 1.3em;
+	line-height: 40px;
+}
+
+.line {
+	position: relative;
+	height: 50px;
+	padding-left: 20px;
+	border-bottom: 1px solid #0099CC;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 5px;
+}
+
+.line .bottom label {
+	color: gray;
+	font-size: 1.3em;
+}
+
+.line .bottom .text {
+	font-size: 1.3em;
+}
+
+.line .bottom img {
+	width: 200px;
+	height: 200px;
+}
+label .msg{
+	
+	color:red;
+	font-size: 0.8em;
+	
+}

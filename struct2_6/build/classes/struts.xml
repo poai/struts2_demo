@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="welcome" namespace="/" abstract="false" extends="struts-default">
+		<!-- 默认 的Action处理类 -->
+		<default-action-ref name="default"></default-action-ref>
+		<!-- 定义全局结果 -->
+		<global-results>
+			<result name="input">/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="sql">/error.jsp</result>
+			<result name="other">/error.jsp</result>
+		</global-results>
+		<!-- 全局异常映射 -->
+		<global-exception-mappings>
+			<exception-mapping result="sql" exception="java.sql.SQLException"></exception-mapping>
+			<exception-mapping result="other" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		
+		<action name="index" class="cn.com.zjf.cxsw.IndexAction"
+			method="execute">
+			<result name="input">/index.jsp</result>
+			<result name="success">/indexs.jsp</result>
+			<result name="test_err" >/error.jsp</result>
+			<!-- 局部异常映射 -->
+			<exception-mapping result="test_err" exception="java.lang.Exception"></exception-mapping>
+		</action>
+		<action name="default" class="cn.com.zjf.cxsw.IndexAction"
+			method="execute">
+
+		</action>
+	</package>
+</struts>

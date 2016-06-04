@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="defaultStack">
+					<param name="fileUpload.maximumSize">1024000</param>
+					<param name="fileUpload.allowedTypes">image/*,audio/mpeg,application/vnd.openxmlformats-officedocument.presentationml.presentation</param>
+					<param name="fileUpload.allowedExtensions">png,jpg,ss</param>
+				</interceptor-ref>
+			</interceptor-stack>
+
+		</interceptors>
+		<default-interceptor-ref name="mystack"></default-interceptor-ref>
+		<action name="index" class="cn.com.zjf.action.IndexAction">
+			<result>/index.jsp</result>
+		</action>
+		<action name="input" class="cn.com.zjf.action.InputAction">
+			<interceptor-ref name="tokenSession"></interceptor-ref>
+			<interceptor-ref name="mystack"></interceptor-ref>
+			<result name="successs">/index.jsp</result>
+			<result name="input">/input.jsp</result>
+			<result name="invalid.token">/token_error.jsp</result>
+		</action>
+	</package>
+</struts>

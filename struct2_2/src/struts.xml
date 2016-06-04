@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- package :strut使用package来组织模块 
+		 name:必须,让其它包能够使用当前包;
+		 extends:当前包继承哪个包，继承在所包中的所有配置，一般继承struts-default 包
+		 ** 这里必须得继承
+		 namespace:可选的，定义命名空间，如果加了namespace 则需要的请求的path前加上namespace的值,若没有则以'/'作为跟路径
+		 htpp://loalhost:80/contextPath/namespase/actionname.action
+	-->
+	<package name="helloWorld" extends="struts-default" namespace="/hello" >
+		<!-- action:配置一个Action,一个Strut2的请求就是一个Action;
+			name:对应一个Strut2请求的名字(或者请求的路径，不包含‘/’和后缀);-->
+		<!--action的默认的配置文件
+			class 	-> 处理请求的java类，默认为com.opensymphony.xwork2.ActionSupport 
+			method	-> 处理请求的方法，要求返回一个String类型的字符串，默认为execute,默认返回'success'-->
+		<action name="student-input"  class="com.opensymphony.xwork2.ActionSupport" method="execute">
+			<!-- result:定义根据返回的结果如何执行跳转
+				 name->定义返回结果的字符串;
+				 type->指定跳转的类型，默认为dispatcher即请求转发跳转-->
+			<result name="success" type="dispatcher">/WEB-INF/view/input.jsp</result>
+		</action>	
+		<action name="student-save" class="model.Student" method="save">
+			<result name="details">/WEB-INF/view/detials.jsp</result>
+		</action>
+		<action name="student-test" class="model.Student" method="test">
+			<result name="test" type="dispatcher">/test.jsp</result>
+		</action>
+	</package>
+</struts>

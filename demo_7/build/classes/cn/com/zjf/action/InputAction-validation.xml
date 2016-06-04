@@ -1,0 +1,27 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <!-- 基于字段的验证 -->
+    <field name="code">
+    	<field-validator type="conversion" short-circuit="true">
+    		<message key="code.conversion"></message>
+    	</field-validator>
+    	
+    	<field-validator type="int">
+    		<param name="min">100</param>
+    		<param name="max">10000</param>
+    		<message key="code.between"></message>
+    	</field-validator>
+    </field>
+    <field name="name">
+    	<field-validator type="requiredstring" short-circuit="true">
+    		<message>name不能为空</message>
+    	</field-validator>
+    	<field-validator type="myname">
+    		<message>XXX</message>
+    	</field-validator>
+    </field>
+</validators>
+

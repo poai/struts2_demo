@@ -1,0 +1,9 @@
+1.在Action中访问Web资源
+
+	I.与Servlet API解耦的方式访问	-->只能够访问到有限的方法(读取请求参数，读写对象的属性，使用Session)
+		.使用ActionContext接口
+		.使用XxxAware接口
+	
+	II.与Servlet API耦合的方式访问	-->访问更多的ServletApi 对象，可以调用原生的方法;
+		.使用ServletContext
+		.实现ServletXxxAware接口

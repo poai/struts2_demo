@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.enable.SlashesInActionNames" value="true"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+	
+	<default-action-ref name="defaultAction"></default-action-ref>
+	<default-class-ref class="cn.comn.zjf.action.TestAction"></default-class-ref>
+	<global-results>
+		<result>/success.jsp</result>
+	
+	</global-results>
+	
+	<!-- 
+		<action name="addStudent" class="cn.comn.zjf.action.StudentAction" method="add">
+			<result>/success.jsp</result>
+		</action>
+		<action name="deleteStudent" class="cn.comn.zjf.action.StudentAction" method="delete">
+			<result>/success.jsp</result>
+		</action>
+		<action name="editorStudent" class="cn.comn.zjf.action.StudentAction" method="editor">
+			<result>/success.jsp</result>
+		</action> -->
+	<!--使用通配符配置Action
+			1.*表示匹配一个任意长度的字符串，不匹配"/"
+				.*Student 	addStudent,deleteStudent,XXXStudent
+				.通过{numbe}来访问第几个*所匹配的值
+				.{0}访问的Action的实际名称,可以通过param 节点为Action的属性赋值
+				.*号可以出现多次中间需要使用分隔符分割不应该出现 .等特殊字符
+				.*不匹配"/" 只会匹配最后一个"/"之后的URI
+			2.**匹配匹配一个任意长度的串 包括"/"
+				.让Action启用"/语法" struts.enable.SlashesInActionNames=true
+				
+				...
+				
+			3.默认配置
+				.default-class-ref  默认的ActionClass
+				.default-action-ref 默认的Action引用
+				.global-results     全局结果配置
+				
+			4.动态方法调用
+			
+				.启用动态方法调用  struts.enable.DynamicMethodInvocation=true
+				.实际开发中很少使用,会暴露Action中的方法，不安全
+				.<a href="add_Student!delete">addStudent.action</a>
+	  -->
+	<!-- <action name="*Student" class="cn.comn.zjf.action.StudentAction" method="{1}">
+		<param name="uri">{0}</param>
+		<result >/WEB-INF/view/{1}Success.jsp</result>
+	</action> -->
+	
+	
+	<action name="*_*" class="cn.comn.zjf.action.{2}Action" method="{1}">
+		<param name="uri">{0}</param>
+		<result>/WEB-INF/view/{1}{2}.jsp</result>
+	</action>
+	
+	
+	<!-- <action name="*_**" >
+		<param name="uri">{2}</param>
+		<result>/success.jsp</result>
+	</action> -->
+	
+	
+	<action name="defaultAction">
+		<result></result>
+	</action>
+	
+	</package>
+</struts>

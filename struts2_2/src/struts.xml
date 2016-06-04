@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!--1.bean 用来定义Struts的组件 -->
+	<!--2.constant 用来定义常量 
+		.struts.action.extension 定义Action的后缀
+		.struts.devMode 是否启用开发者模式 -->
+	<constant name="struts.action.extension" value="action,,hello,zjf"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+
+	<!--3.include	加载其它的配置文件  -->
+	<include file="struts_1.xml"></include>
+	
+	<!--4.package  定义模块
+		name:包名,不能重名
+		extends :继承某一个包,通常情况下继承struts-default
+		namespace :定义命名空间
+				./代表根 从项目的根路径开始    struts2_2/hello.action
+				.package中的Action的访问URI为 namespace/actionName
+		abstract:是否是抽象的,如果是抽象的则不允许定义Action
+	  -->
+	<package name="hello_1" extends="struts-default" namespace="/" >
+	
+	</package>
+	<package name="hello" extends="struts-default" namespace="/zjf">
+		<!--1.action的默认的配置
+		 class:com.opensymphony.xwork2.ActionSupport 
+		 method:execute 默认返回"success" -->
+		<!-- struts2_2/zjf/hello.action -->
+		
+		<!--action
+			name: Action的名字  访问:namespace/nameValue."后缀"
+			class:Action的实体类
+			method:处理业务的方法
+		  -->
+		<action name="hello" >
+			<!--2.result默认配置 success -->
+			
+			<!--result
+				name:逻辑视图名称,
+				type:执行何种页面跳转模式
+					.dispatcher		执行请求转发跳转(默认值)
+					.redirect		重定向跳转
+					.chain			请求转发到Action
+					.redirectAction 重定向到Action
+					
+			  -->
+			<result type="redirectAction">
+				<param name="namespace">/zjf</param>
+				<param name="actionName">hello_1</param>
+			</result>
+		</action>
+		<action name="hello_1">
+			<result>/hello.jsp</result>
+		</action>
+	</package>
+
+</struts>

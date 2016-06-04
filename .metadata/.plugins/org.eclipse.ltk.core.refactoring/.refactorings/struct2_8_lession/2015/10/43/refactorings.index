@@ -1,0 +1,7 @@
+1445583466857	Encapsulate field 'roleId'
+1445583470240	Encapsulate field 'roleName'
+1445584075586	Move 'index.jsp' to 'WebContent'
+1445584290115	Delete element
+1445585267238	Rename resource 'input.jsp'
+1445585441110	Rename resource 'emp_save.jsp'
+1445585679881	Encapsulate field 'desc'

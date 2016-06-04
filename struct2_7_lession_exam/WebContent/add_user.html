@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息添加</title>
+    <style>
+        *{
+             pading:0px;
+             margin:0px;
+             font-family: sans-serif;
+             font-size:30px;
+             color:cornflowerblue;
+        }
+        
+        
+        h1{
+            font-size:50px;
+            text-align:center;
+            background-color: darkgray;
+            color:black;
+            margin-bottom: 30px;
+        }
+        .center{
+             width:600px;   
+             height:100%;
+             margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>学生信息添加页</h1>
+    <div class="center">
+        <form action="add_user_service.php" method="post">
+            <label for="code">手机:</label>
+            <input type="text" name="code" id="code"/>
+            <br />
+            <label for="code">姓名:</label>
+            <input type="text" name="name" id="name"/>
+            <br />
+            <label for="code">密码:</label>
+            <input type="password" name="pass" id="pass"/>
+            <br>
+            <input type="submit" value="添加">
+        </form>
+    </div>
+</body>
+</html>

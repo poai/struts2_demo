@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="exam" namespace="/" abstract="false" extends="struts-default">
+		<!-- 处理登陆Action -->
+		<action name="login" class="cn.com.exam.action.LoginAction" method="execute">
+			<result name="success" type="redirectAction">exam_page</result>
+			<result name="error" type="redirect">/index.html</result>
+		</action>
+		<!-- 处理试卷业务的Action -->
+		<action name="exam_*" class="cn.com.exam.action.ExamAction" method="{1}">
+			<result name="page_success">/WEB-INF/view/pager.jsp</result>
+			<result name="handler_success">/exam_result.jsp</result>
+			<result name="{1}_error">/index.html</result>
+		</action>
+	</package>
+</struts>

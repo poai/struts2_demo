@@ -1,0 +1,15 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="job.title">
+		<field-validator type="requiredstring">
+			<message>标题不允许为空</message>
+		</field-validator>
+	</field>
+	<validator type="conversion" >
+		<param name="fieldName">job.stade</param>
+		<message>非法的日期格式</message>
+	</validator>
+</validators>

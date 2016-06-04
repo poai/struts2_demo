@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 启用开发者模式 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+
+		<interceptors>
+			<interceptor name="loginInterceptor"
+				class="cn.com.zjf.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="zjf">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 默认的拦截器栈 -->
+		<default-interceptor-ref name="zjf"></default-interceptor-ref>
+
+		<!-- 全局结果 -->
+		<global-results>
+			<result name="index" type="redirect">/login.jsp</result>
+		</global-results>
+
+		<!-- 登陆业务 -->
+		<action name="login" class="cn.com.zjf.action.LoginAction"
+			method="execute">
+			<result type="redirectAction">home.action</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<!-- 学生管理业务 -->
+		<action name="add_student"  class="cn.com.zjf.action.StudentAction"
+			method="add">
+			<!-- 配置文件上传的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="zjf"></interceptor-ref>
+			<result type="redirect">/student/add_student.jsp</result>
+			<result name="input">/student/add_student.jsp</result>
+		</action>
+		<action name="queryAll_student" class="cn.com.zjf.action.StudentAction"
+			method="queryAll">
+			<result >/student/queryAll_student.jsp</result>
+		</action>
+		<action name="delete" class="cn.com.zjf.action.StudentAction"
+			method="delete">
+			<result type="chain" >queryByPage</result>
+		</action>
+		<action name="editor" class="cn.com.zjf.action.StudentAction"
+			method="editor">
+			<result type="dispatcher" >/student/detials.jsp</result>
+		</action>
+		<action name="queryByPage" class="cn.com.zjf.action.PageAction"
+			>
+			<result >/student/pagestudent.jsp</result>
+		</action>
+		<!-- 主界面 -->
+		<action name="home">
+			<result>/home.jsp</result>
+		</action>
+	</package>
+</struts>

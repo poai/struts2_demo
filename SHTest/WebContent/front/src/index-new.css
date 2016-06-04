@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* CSS Document */
+input{padding:0;margin:0;font-size:12px;font-family:宋体;color:#61605C;}
+.out01{width:950px;margin:0 auto;padding:2px 0 0 0;overflow:hidden;zoom:1;background:#fff;}/*首页上部banner样式*/
+/*.out011{width:475px;margin:0 auto;overflow:hidden;zoom:1;}*/
+.hot td{ border-bottom:1px solid #dbdbdb; border-left:1px solid #dbdbdb; padding:2px;}
+.out02{width:950px;margin:0 auto;overflow:hidden;zoom:1;}/*首页上部banner样式*/
+.out03{width:645px;margin:0 auto;overflow:hidden;zoom:1;}/*首页上部645 banner样式*/
+.hot02 td{ padding:2px;}
+.pt07{padding:7px 0 0 0;}
+.hd226{height:216px;}
+.wd318{width:318px;}
+.wd155{width:140px;}
+.wd642{width:642px;}
+.wd300{width:300px;}
+.wd302{width:305px;}
+.wd370{width:380px;}
+.wd259{width:259px;}
+.wd238{width:238px; padding:10px 6px 0 9px; line-height:18px;}
+.wd290{width:290px; margin:8px 1px 0 9px; line-height:22px;}
+.wd107{width:107px;}
+.wd125{width:125px}
+.wd123{width:123px;}
+.infoBox{padding:13px 0 12px 0; overflow:hidden;zoom:1;}
+.infoBox dd{background:url(tip02.gif) no-repeat left center;padding-left:10px;line-height:22px;width:290px;float:left;margin:0 5px 0 15px;display:inline; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.infoBox dd span{padding:0 5px;float:right;width:70px;}
+.infoBox dd a{color:#282828;}
+.infoBoxf{padding-left:20px; overflow:hidden;zoom:1;}
+.infoBox1{padding:13px 0 12px 0; overflow:hidden;zoom:1;}
+/*.infoBox1 dd{background:url(../images/tip02.gif) no-repeat left center;padding-left:10px;line-height:22px;width:90px;float:left;margin:0 5px 0 18px;display:inline;}*/
+.infoBox1 dd{background:url(../images/tip02.gif) no-repeat left center;padding-left:10px;line-height:22px;width:100px;float:left;margin:0 7px 0 7px;display:inline;}
+.infoBox1 dd a{color:#282828;}
+
+/*.btBox{overflow:hidden;zoom:1;}*/
+.btBox{padding-left:2px;padding-right:2px;padding-bottom:2px;}
+/*.btBox img{float:left;}*/
+.tab_tsh{background:url(../images/tab_bg06.gif) repeat-x;overflow:hidden;zoom:1;}
+/*首页第二屏专项内容 公务员 入伍 学生村官样式*/
+.tab_tsh1{ border-bottom:1px solid #D8DFE7;overflow:hidden;zoom:1;}
+.tab01{overflow:hidden;zoom:1; }
+.tab01 li{font-weight:bold;text-align:center;float:left; width:70px;height:34px;line-height:34px;}
+.tab01 li span{display:block;}
+.tab01 .curBox{ border-top:2px solid #00749B; repeat-x;height:31px;line-height:31px;height:33px;border-bottom:none;border-right:1px solid #D8DFE7;border-left:1px solid #D8DFE7;}
+.tab01 .curBox span{color:#2988DA;}
+.tab_cont01,.tab_cont02,.tab_cont03,.tab_cont04{display:none;}
+.tab01 li:hover,.tab02 li:hover,.tab03 li:hover,.tab04 li:hover{ cursor:pointer;}
+
+.tab02{overflow:hidden;zoom:1;height:33px;}
+.tab02 li{background:url(../images/tab_bg04.gif) repeat-x;font-weight:bold;text-align:center;float:left;}
+.tab02 li span{display:block;color:#2C8ECD;font-weight:normal;border-right:1px solid #9FA0A2;width:110px;height:31px;line-height:31px;}
+.tab02 .curBox{background:#FFF;height:31px;}
+.tab02 .curBox span{color:#2988DA;font-weight:bold;}
+.tab02 .first{width:76px;border-right:0 none;}
+
+.tab03{overflow:hidden;zoom:1;height:33px;}
+.tab03 li{background:url(../images/tab_bg05.gif) repeat-x;text-align:center;float:left;height:33px;}
+.tab03 li span{display:block;color:#4A4E4D;font-weight:bold;width:70px;height:31px;line-height:31px;border-right:1px solid #CECECE;}
+.tab03 .curBox{background:#FFF;height:31px;}
+.tab03 .curBox span{color:#0E8A72;font-weight:bold;}
+.tab_cont03{padding:3px 0 0 0;}
+/*首页第一屏就业之家双选和院校双选切换样式*/
+.tab04{overflow:hidden;zoom:1;height:33px;}
+.tab04 li{background:url(tab_bg04.gif) repeat-x;font-weight:bold;text-align:center;float:left;}
+.tab04 li span{display:block;color:#2C8ECD;font-weight:normal;border-right:1px solid #9FA0A2;width:150px;height:31px;line-height:31px;}
+.tab04 .curBox{background:#FFF;height:31px;}
+.tab04 .curBox span{color:#2988DA;font-weight:bold;}
+.tab04 .first{width:152px;border-right:0 none;}
+
+.tab05{overflow:hidden;zoom:1;height:33px;}
+.tab05 li{border-top:#0000FF 3px solid;text-align:center;float:left;height:33px;}
+.tab05 li span{display:block;color:#4A4E4D;font-weight:bold;width:70px;height:31px;line-height:31px;border-right:1px solid #CECECE;border-top:#0000FF 1px solid;}
+.tab05 .curBox{background:#FFF;height:31px;}
+.tab05 .curBox span{color:#0E8A72;font-weight:bold;}
+.tab_cont05{padding:3px 0 0 0;}
+
+
+
+
+.gunBox {width:299px;height:189px;padding:2px;}
+.gunBox img{width:299px;height:189px;padding:2px;}
+.tuBox span{overflow:hidden;zoom:1;display:block;}
+.zt_yellow{color:#CE8100;}
+.gd_more{background:red;background:url(../images/tip05.gif) no-repeat right center;height:31px;line-height:31px;padding:0 17px 2px 0;margin:0 10px 0 0;}
+.gd_more a{ font-family:Arial;} 
+.picBox{padding:5px 6px 0 6px;}
+.picBox img{width:245px;height:117px;}
+.peixunBox{padding:10px 10px 0 10px;line-height:22px;overflow:hidden;zoom:1;}
+.peixunBox img{width:128px;height:85px;}
+/*首页最新公告横版*/
+.gonggao{overflow:hidden;zoom:1; line-height:22px;padding:2px 0 0}
+.zt_gg{color:#000;font-weight:bold; font-size:12px;padding:0px 0 0 18px; background:url(../images/gg.gif) no-repeat left center;margin:0 0 0 10px;height:22px;_padding:0 0 0 20px;}
+.gonggao_news{font-size:12px; line-height:22px;height:22px;overflow:hidden; width:853px;}
+.gonggao_news span a{padding-left:25px;}
+/*首页校园宣讲会*/
+.xjh_top{width:280px;margin:8px 11px 0 11px;border-bottom:#D8DFE7 1px dashed;}
+.xjh_top ul{ display:block; width:287px;}
+.xjh_top ul.add_bg{width:287px;height:22px;}
+.xjh_top ul li{line-height:21px;height:21px;font-size:12px;float:left;}
+.xjh_top ul li.first{line-height:21px;height:21px;font-size:12px;width:51px;overflow:hidden; text-align:center;}
+.xjh_top ul li.second{line-height:21px;height:21px;font-size:12px;width:110px; overflow:hidden;text-align:center;}
+.xjh_top ul li.three{line-height:21px;height:21px;font-size:12px;width:113px; overflow:hidden;text-align:center;}
+.xjh{width:287px;padding:0 0 0 15px}
+.xjh ul{ display:block; width:287px;}
+.xjh ul.add_bg{width:287px;height:22px;}
+.xjh ul li{line-height:21px;height:21px;font-size:12px;float:left;}
+.xjh ul li.first{line-height:21px;height:21px;font-size:12px;width:56px;overflow:hidden; text-align:left;}
+.xjh ul li.second{line-height:21px;height:21px;font-size:12px;width:90px; overflow:hidden;text-align:left;margin-left:12px;}
+.xjh ul li.three{line-height:21px;height:21px;font-size:12px;width:110px; overflow:hidden;text-align:left; float:right}
+
+
+/*实用导航样式*/
+ul#useNav{margin:0;padding:0;list-style:none;float:left;}
+#useNav li{float:left;width:124px;background:#f5f5f5; height:26px;line-height:26px;padding:0 17px 0 17px; }
+#useNav a{text-decoration:none; width:90px; color:#000;font-size:14px;border:none;display:block;padding:2px 7px 0 7px; }
+#useNav li a:hover{ border:#CAD7DD 1px solid; font-weight:bold; background-color:#FFFFFF;}
+
+ul#useNav1{margin:0;padding:0;list-style:none;float:left;}
+#useNav1 li{float:left;width:135px;background:#f5f5f5; height:26px;line-height:26px;padding:0 27px 0 27px; }
+#useNav1 a{text-decoration:none; width:135px; color:#000;font-size:14px;border:none;display:block;padding:2px 7px 0 7px; text-align:center;}
+#useNav1 li a:hover{ border:#CAD7DD 1px solid; font-weight:bold; background-color:#FFFFFF;}
+
+
+
+

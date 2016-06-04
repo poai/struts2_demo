@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd" uri="file:///F:/JavaEE/Struct2/struts-2.3.20/src/xwork-core/src/main/resources/xwork-validator-1.0.3.dtd"/>
+  <uri name="http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd" uri="file:///F:/JavaEE/Struct2/struts-2.3.20/src/xwork-core/src/main/resources/xwork-validator-1.0.3.dtd"/>
+  <uri name="http://struts.apache.org/dtds/struts-2.3.dtd" uri="file:///F:/JavaEE/Struct2/struts-2.3.20/src/core/src/main/resources/struts-2.3.dtd"/>
+</catalog>

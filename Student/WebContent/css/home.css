@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+	*{
+		padding:0px;
+		margin: 0px;
+	}
+	.box{
+	
+	
+	}
+	.box .top{
+		height:100px;
+		background-color: #99CCCC;
+	}
+	.box .middle{
+		position:relative;
+		height:800px;
+		background-color: #CCCCCC;
+	}
+	.box .foot{
+		height:100px;
+		background-color: #99CCCC;
+	}
+	.box .middle .menu{
+		width:200px;
+		height:100%;
+		background-color: #0099CC;
+	}
+	.box .middle .content{
+		position:absolute;
+		left:210px;
+		top:0px;
+		right:0px;
+		height:100%;
+		background-color: #FFCCCC;
+	}
+	
+	.menu ul li a{
+		/* 强制显示为块元素 */
+		height:40px;
+		line-height:40px;
+		display: block;
+		color: white;
+		font-size: 1.3em;
+		text-align: center;
+		text-decoration: none;
+		margin: 5px 0px 5px 0px;
+		background-color: #99CCCC;
+	}
+	.menu ul li a:HOVER {
+		background-color: #FF6666;
+		position: relative;
+		left: 10px;
+		margin-left: -10px;
+	}
+	

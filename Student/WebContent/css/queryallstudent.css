@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.box {
+	
+}
+
+.box .title {
+	height: 40px;
+	background-color: #0099CC;
+	color: white;
+	font-size: 1.3em;
+	line-height: 40px;
+}
+
+.box .content table{
+	width:800px;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+.content table,tr,th,td{
+	border:1px solid #0099CC;
+	text-align:center;	
+}
+.content table th{
+	color:#0099CC;
+	font-weight: bolder;
+	font-size:1.3em;
+	height:30px;
+}
+.content table td{
+	height:30px;
+}
+.content table tr:hover{
+	
+	background-color: #FF6666;
+	
+}

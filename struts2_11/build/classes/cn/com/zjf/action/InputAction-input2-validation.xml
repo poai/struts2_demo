@@ -1,0 +1,35 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+
+
+
+<!--使用XML的方式验证
+
+	1.实现ValidationAware
+	2.如果发生类型转换异常则跳过字段的验证
+	3.ActionClass 范围内的字段的验证
+		.actionClassName-validation.xml
+		
+  -->
+<validators>
+   <!--1.基于字段的验证  -->
+   <field name="name">
+   		<!-- 定义验证的规则
+   			1.required  		非null的
+   			2.requiredstring 	非"空"的字符串
+   			3.
+   		 -->
+   		<field-validator type="requiredstring">
+   			<message>姓名不能为空</message>
+   		</field-validator>
+   </field>
+   <field name="age">
+   		<field-validator type="int">
+   			<param name="min">40</param>
+   			<param name="max">60</param>
+   			<message key="validate.age"></message>
+   		</field-validator>
+   </field>
+</validators>

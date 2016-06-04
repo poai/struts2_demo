@@ -1,0 +1,43 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="student.code">
+
+
+		<field-validator type="int" short-circuit="true">
+			<param name="min">0</param>
+			<param name="max">10000000</param>
+			<message>学号必须介于${min}->${max}之间</message>
+		</field-validator>
+	</field>
+	<field name="student.name">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>姓名不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+             <param name="minLength">1</param>
+             <param name="maxLength">5</param>
+             <param name="trim">true</param>
+             <message>姓名的长度必须介于${minLength}和${maxLength}之间</message>
+        </field-validator>
+	</field>
+	<field name="student.sex">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>请选择性别</message>
+		</field-validator>
+	</field>
+	<field name="student.like">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>请选择爱好</message>
+		</field-validator>
+	</field>
+	<field name="student.school">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>请选择学校</message>
+		</field-validator>
+	</field>
+</validators>

@@ -1,0 +1,7 @@
+package cn.com.zjf.converter;
+
+import org.apache.struts2.util.StrutsTypeConverter;
+
+public class StudentConverter extends StrutsTypeConverter{
+
+}

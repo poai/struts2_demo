@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wst.dtd.ui.internal.preferences.DTDTemplatePreferencePage$DTDEditTemplateDialog_dialogBounds">
+		<item value="617" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="362" key="DIALOG_HEIGHT"/>
+		<item value="41" key="DIALOG_X_ORIGIN"/>
+		<item value="43" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="80" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="80"/>
+			<item value="微视"/>
+			<item value="就业政策"/>
+			<item value="院校直通"/>
+			<item value="校园直通"/>
+			<item value="专家答疑"/>
+			<item value="创业园地"/>
+			<item value="热门职位"/>
+		</list>
+		<list key="replacehistory">
+			<item value="enterprise"/>
+			<item value="Enterprise"/>
+			<item value="news"/>
+			<item value="News"/>
+			<item value="new"/>
+			<item value="New"/>
+			<item value="${basepath }front/"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="273" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="400" key="DIALOG_HEIGHT"/>
+		<item value="254" key="DIALOG_X_ORIGIN"/>
+		<item value="299" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

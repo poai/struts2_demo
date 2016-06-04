@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.action.extension" value="action,do,"></constant>
+	
+	<!-- 启用动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <package name="default" namespace="/" extends="struts-default">
+    	<action name="handler" class="cn.com.zjf.action.HandlerMessageAction">
+    		<!-- 请求转发跳转到success.jsp -->
+    		<result name="error" type="dispatcher">/success.jsp</result>
+    		<!-- 重定向跳转到其他页面 -->
+    		<result name="input" type="redirect">/success.jsp</result>
+    		<!-- 重定向到其它Acttion中去 -->
+    		<result name="login" type="redirectAction">other/testAction</result>
+    		<!-- 请求转发到其它Action中去 -->
+    		<result name="none" type="chain">
+    			<param name="actionName">testAction</param>
+    			<param name="namespace">/other</param>
+    		</result>
+    	</action>
+    	<action name="user-*" class="cn.com.zjf.action.UserAction" method="{1}">
+    		<result name="{1}-success">/success.jsp</result>
+    	</action>
+    	<action name="*_*" class="cn.com.zjf.action.{1}" method="{2}">
+    		<result >/index.jsp</result>
+    	</action>
+    	<action name="dynamicTest" class="cn.com.zjf.action.DynamicTestAction" method="post">
+    		<result>/index.jsp</result>
+    	</action>
+    </package>
+    <package name="otherpackage" namespace="/other" abstract="false" extends="struts-default">
+    	<action name="testAction" class="" method="execute">
+    		<result name="success">/success.jsp</result>
+    	</action>
+    </package>
+</struts>

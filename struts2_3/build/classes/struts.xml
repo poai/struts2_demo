@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.action.extension" value="action,,"></constant>
+	
+	<package name="hello" extends="struts-default" namespace="/">
+	
+		<action name="login" class="cn.com.zjf.action.LoginAction">
+			<result>/success.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="testActionContext" class="cn.com.zjf.action.TestActionContext">
+			<result>/success.jsp</result>
+		</action>
+		<action name="testAwareAction" class="cn.com.zjf.action.TestAwareAction" >
+			<result>/success.jsp</result>
+		</action>
+		<action name="testServletActionContext" class="cn.com.zjf.action.TestServletActionContext" >
+			<result>/success.jsp</result>
+		</action>
+		<action name="testServletAware" class="cn.com.zjf.action.TestServletAwareAction" >
+			<result>/success.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,62 @@
+package cn.com.zjf.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.RequestAware;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ModelDriven;
+
+import cn.com.zjf.model.Employee;
+import cn.com.zjf.service.Dao;
+
+public class EmployeeAction implements RequestAware,ModelDriven<Employee>{
+	private Dao dao = new Dao();
+
+	private Employee employee;
+
+	public String list() {
+		requestMap.put("emps", dao.getEmployee());
+		return "list";
+	}
+
+	private Map<String, Object> requestMap;
+
+	@Override
+	public void setRequest(Map<String, Object> requestMap) {
+		this.requestMap = requestMap;
+	}
+
+	public String delete() {
+		dao.delete(employee.getEmployeeId());
+		/*
+		 * 返回结果的类型应该为redirectAction 或者chain 使用chain
+		 * 则到达目标地址栏后，目标地址栏后显示的任然是删除的表单，刷新会删除
+		 */
+		return "success";
+	}
+
+	public String save() {
+		System.out.println(employee);
+		System.out.println(ActionContext.getContext().getValueStack().peek());
+		dao.save(employee);
+		return "success";
+	}
+	
+	public String edit(){
+		/*1.获取Employee ID*/
+		Integer employeeId=employee.getEmployeeId();
+		/*2.获取Employee对象*/
+		Employee emy=dao.get(employeeId);
+		return "edit";
+	}
+
+	@Override
+	public Employee getModel() {
+		/*实例化employee 对象*/
+		employee=new Employee();
+		/*将Employee对象放在ValueStack 的栈顶元素,由Paramater 拦截器实例化栈顶元素的值*/
+		return employee;
+	}
+
+}

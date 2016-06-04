@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<!--action VS Action
+	.action代表一个Strut2的一个请求;
+	.Action类 :一个能处理Strut2请求的Java类;
+			.属性的名字必须遵守JavaBean的命名规范,
+			.属性的类型可以是任意的，Strut2会完成自动类型转换;
+			.必须有一个无参数的构造器;
+			.同一个Action可以有多个处理请求的方法或者一个Action可以响应多个请求;
+			.Strut2会为每一个请求创建一个新的Action实例;
+  -->
+<struts>
+	<!-- 定义Struts2常量 -->
+	<constant name="struts.action.extension" value="action,,do,"></constant>
+	
+	
+    <package name="default" namespace="/" extends="struts-default">
+    	<action name="testActionContext" class="cn.zjf.action.TestActionContextAction" method="execute">
+    		<result>testActionContext.jsp</result>
+    	</action>
+    	<action name="testAware" class="cn.zjf.action.TestAwareAction">
+    		<result name="success">/WEB-INF/page/testAware.jsp</result>
+    	</action>
+    	<action name="testServletActionContext" class="cn.zjf.action.TestServletContextAction">
+    		<result name="success" type="redirect">/index.jsp</result>
+    	</action>
+    	<action name="testServletAware" class="cn.zjf.action.TestServletAwareAction">
+    		<result name="success">/index.jsp</result>
+    	</action>
+    </package>
+</struts>

@@ -1,0 +1,106 @@
+<classpath>
+  <container id="SHTest!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/SHTest/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/SHTest/WebContent/WEB-INF/lib/hibernate-core-4.3.11.Final.jar">
+      <source-attachment-path>F:/JavaEE/Hibernate/hibernate-release-4.3.11.Final.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="struct2_11!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/struct2_11/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/struct2_11/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+  </container>
+  <container id="struct2_13!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/struct2_13/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/struct2_13/WebContent/WEB-INF/lib/struts2-core-2.0.11.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20.src.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="demo_4!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/demo_4/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/demo_4/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="Student!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/Student/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/Student/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="struct2_2!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/struct2_2/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/struct2_2/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+  </container>
+  <container id="struct2_3!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/struct2_3/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/struct2_3/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="struct2_1!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/struct2_1/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/struct2_1/WebContent/WEB-INF/lib/ognl-3.0.6.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/struct2_1/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+  </container>
+  <container id="demo_5!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/demo_5/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="demo_1!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/demo_1/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/demo_1/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/demo_1/WebContent/WEB-INF/lib/ognl-3.0.6.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="demo_7!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/demo_7/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="struct2_10!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/struct2_10/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/struct2_10/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/JavaEE/Struct2/struts-2.3.20/src</source-attachment-path>
+    </entry>
+  </container>
+  <container id="demo_student!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/struct2_workspace/demo_student/WebContent/WEB-INF/lib/xwork-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+    <entry id="E:/struct2_workspace/demo_student/WebContent/WEB-INF/lib/struts2-core-2.3.20.jar">
+      <source-attachment-path>F:/源码/struts/struts-2.3.20-all.zip</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

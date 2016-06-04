@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+	
+		<interceptors>
+			<interceptor name="hello" class="cn.com.zjf.action.MyIntercepter"></interceptor>
+		</interceptors>
+		<!-- 配置文件上 传的参数 -->
+		<!-- 默认的拦截器栈 -->
+		<action name="upload" class="cn.com.zjf.action.TestUpload">
+			<!-- 配置拦截器的初始化参数 -->
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg
+				</param>
+				<param name="maximumSize">2000</param>
+				<param name="allowedExtensions">png,bmp</param>
+			</interceptor-ref>
+			<result>/success.jsp</result>
+			<result name="input">/upload.jsp</result>
+		</action>
+		<!-- 文件下载的配置 -->
+		<action name="download" class="cn.com.zjf.action.TestDownload">
+			<result  type="stream">
+				<!-- 配置固定的值 -->
+				<param name="buffersize">1024</param>
+			</result>
+		</action>
+		<action name="tokentest" class="cn.com.zjf.action.TestTokenAction">
+			<interceptor-ref name="hello"></interceptor-ref>
+			<interceptor-ref name="hello"></interceptor-ref>
+			<interceptor-ref name="tokenSession"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result type="dispatcher">/success.jsp</result>
+			<!-- <result name="invalid.token">/token-error.jsp</result> -->
+		</action>
+	</package>
+</struts>

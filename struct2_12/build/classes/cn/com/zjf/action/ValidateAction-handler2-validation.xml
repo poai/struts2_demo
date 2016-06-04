@@ -1,0 +1,45 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<!-- 验证age -->
+
+
+	<field name="age">
+		<!-- 短路验证，一个验证器失败其它的验证器不在执行 -->
+		<field-validator type="conversion" short-circuit="true">
+			<message>Conversion Error Occurred</message>
+		</field-validator>
+
+		<field-validator type="int" >
+			<param name="min">1</param>
+			<param name="max">150</param>
+			<message key="error.int"></message>
+		</field-validator>
+	</field>
+	<!-- 验证数量 -->
+	<field name="count">
+		<!-- 短路验证，一个验证器失败其它的验证器不在执行 -->
+		<field-validator type="conversion" short-circuit="true">
+			<message>Conversion Error Occurred</message>
+		</field-validator>
+		<field-validator type="int" >
+			<param name="min">100</param>
+			<param name="max">200</param>
+			<message key="error.int"></message>
+		</field-validator>
+	</field>
+	<!-- 验证IDCard -->
+	<field name="idCard">
+		<field-validator type="idcard">
+			<message>is not a IDCard</message>
+		</field-validator>
+	</field>
+	
+	<!-- 非字段验证 -->
+	<validator type="expression">
+		<param name="expression">password==password2</param>
+		<message>Failed to meet Ognl Expression .... </message>
+	</validator>
+</validators>

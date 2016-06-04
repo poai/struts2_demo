@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!--package  用来定义不同的功能块
+			name:包名
+			extends	:继承的父包	默认应该继承struts-default
+			namespace:定义命名空间
+	  -->
+	  
+    <package name="hello" namespace="/" extends="struts-default"  >
+		<!--Action
+			name:访问Action的名字
+			class:处理Action的Java类
+			method：处理业务的方法
+		
+		  -->
+      	<action name="hello" class="cn.com.zjf.action.HelloAction" method="execute" >
+      		<!--result
+      			name:逻辑视图名称	
+      			value:实际存在的资源
+      		  -->
+      		<result name="success">/WEB-INF/view/hello.jsp</result>
+      		<result name="error">/WEB-INF/view/hello.jsp</result>
+      	</action>
+    </package>
+    
+</struts>

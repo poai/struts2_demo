@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/lrtk.css">
+    <script src="js/validate.js"></script>
+    <script>
+        function login(){
+            var code=$("#code").val();
+            var pass=$("password").val();
+			/*
+            if(!code.isMobile()){
+                confirm("手机号码不合法");
+                return false;
+            }*/
+            if(pass.length<6){
+                confirm("密码长度不能少于6位");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 代码 开始 -->
+    <div id="login">
+        <div class="wrapper">
+            <div class="login">
+                <form action="login.action" method="post" class="container offset1 loginform" onsubmit="return login();">
+                    <div id="owl-login">
+                        <div class="hand"></div>
+                        <div class="hand hand-r"></div>
+                        <div class="arms">
+                            <div class="arm"></div>
+                            <div class="arm arm-r"></div>
+                        </div>
+                    </div>
+                    <div class="pad">
+                        <div class="control-group">
+                            <div class="controls">
+                                <label for="code" class="control-label fa fa-envelope"></label>
+                                <input id="code" type="text" name="code" placeholder="Email" tabindex="1" 
+                                        autofocus="autofocus" class="form-control input-medium" >
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <label for="password" class="control-label fa fa-asterisk"></label>
+                                <input id="password" type="password" name="pass" placeholder="Password" 
+                                        tabindex="2" class="form-control input-medium">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                       <a href="" tabindex="5" class="btn pull-left btn-link text-muted">Forgot password?</a>
+                       <a href="" tabindex="6" class="btn btn-link text-muted">Sign Up</a>
+                       <button type="submit" tabindex="4" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $('#login #password').focus(function () {
+                    $('#owl-login').addClass('password');
+                }).blur(function () {
+                    $('#owl-login').removeClass('password');
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

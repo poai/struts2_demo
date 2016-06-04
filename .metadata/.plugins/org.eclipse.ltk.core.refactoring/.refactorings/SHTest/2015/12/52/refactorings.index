@@ -1,0 +1,65 @@
+1450688693871	Copy file
+1450690399471	Copy file
+1450690408211	Copy file
+1450690508004	Copy file
+1450690525825	Copy file
+1450690698251	Copy file
+1450690718365	Copy file
+1450692042457	Copy files
+1450692927421	Copy files
+1450695819068	Delete element
+1450696065600	Move compilation unit
+1450696366416	Encapsulate field 'id'
+1450696376989	Encapsulate field 'job'
+1450698630164	Encapsulate field 'requestMap'
+1450712672078	Rename resource '北京高校毕业生就业信息网.html'
+1450744814048	Encapsulate field 'sdate'
+1450752436670	Encapsulate field 'page'
+1450752483761	Encapsulate field 'pageSize'
+1450756306910	Copy file
+1450760408692	Rename resource 'page_500.html'
+1450761063868	Delete element
+1450761189108	Infer generic type arguments
+1450775813318	Rename resource 'index.html'
+1450777023727	Copy compilation unit
+1450777141653	Rename type 'New'
+1450777168851	Rename type 'NewAction'
+1450779513744	Rename resource 'add_New.jsp'
+1450779668492	Rename resource 'query_New.jsp'
+1450779983596	Copy file
+1450847430628	Copy compilation unit
+1450849351101	Copy file
+1450850965116	Delete element
+1450850978696	Copy file
+1450851234195	Delete element
+1450856416757	Rename type 'Index'
+1450856420269	Delete element
+1450856876389	Encapsulate field 'jobs'
+1450857720571	Encapsulate field 'news'
+1450859305143	Encapsulate field 'zxdt'
+1450859576033	Encapsulate field 'gwy'
+1450859624759	Encapsulate field 'cyyd'
+1450860828647	Encapsulate field 'tz'
+1450861108881	Encapsulate field 'jyzd'
+1450861945931	Move 'info.jsp' to 'front'
+1450863164890	Delete element
+1450865180532	Delete element
+1450865324100	Delete element
+1450865336391	Delete element
+1450865353876	Delete element
+1450865367111	Copy files
+1450872399923	Encapsulate field 'type'
+1450872416554	Encapsulate field 'id'
+1450943412119	Encapsulate field 'types'
+1450943769141	Encapsulate field 'types'
+1450945672525	Encapsulate field 'id'
+1450945675297	Encapsulate field 'type'
+1450946342442	Rename resource 'more.jsp'
+1450946815803	Copy file
+1451004716105	Delete element
+1451139621620	Encapsulate field 'code'
+1451139624714	Encapsulate field 'pass'
+1451140611459	Encapsulate field 'name'
+1451142953262	Move file
+1451142980789	Rename resource 'Login-validation.xml'
+1451143555601	Rename resource 'JobAction-validation.xml'

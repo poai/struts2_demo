@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 指定全全局的国际化资源文件的文件名称 -->
+	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
+	<!-- 多文件上传的配置 -->
+	<!-- 多文件上传的总的大小的上线值 -->
+	<constant name="struts.multipart.maxSize" value="20480"></constant>
+	
+	<package name="student" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="defaultStack">
+					<!-- 配置文件上传的参数 -->
+					<!-- 单个文件的最大值 -->
+					<param name="fileUpload.maximumSize">1024000</param>
+					<!-- 允许的类型 -->
+					<param name="fileUpload.allowedTypes">image/png,image/jpeg</param>
+					<!-- 允许文件扩展名-->
+					<param name="fileUpload.allowedExtensions">png,jpeg</param>
+				</interceptor-ref>
+			
+			</interceptor-stack>
+		</interceptors>
+	
+		<default-interceptor-ref name="mystack"></default-interceptor-ref>
+	
+		<action name="index">
+			<result>/input.jsp</result>
+		</action>
+		<action name="input" class="cn.com.zjf.action.InputAction">
+			<result>/index.jsp</result>
+			<result name="input">input.jsp</result>
+		</action>
+		<action name="mult_input" class="cn.com.zjf.action.MultInputAction">
+			<result>/index.jsp</result>
+			<result name="input">mult_input.jsp</result>
+		</action>
+		<action name="upload" class="cn.com.zjf.action.UploadAction">
+			<result type="stream"></result>
+			<!-- 内容的类型 -->
+			<param name="contentType">application/vnd.openxmlformats-officedocument.presentationml.presentation</param>
+			<!-- 缓存区的大小 -->
+			<param name="bufferSize">512</param>
+			<!-- 是否允许客户端缓存 -->
+			<param name="allowCaching">false</param>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,62 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+
+
+
+<!--使用XML的方式验证
+
+	1.实现ValidationAware
+	2.如果发生类型转换异常则跳过字段的验证
+	3.ActionClass 范围内的字段的验证
+		.actionClassName-validation.xml
+		
+	4.多个Action使用同一个Action类的验证器的配置
+		.ActionClassName-actionName-validation.xml
+		
+	5.多个消息使用同一条国际化资源文件
+		
+  -->
+<validators>
+   <!--1.基于字段的验证  -->
+   <field name="name">
+   		<!-- 定义验证的规则
+   			1.required  		非null的
+   			2.requiredstring 	非"空"的字符串
+   			
+   			3.int 				整数验证
+   				.min  最小值
+   				.max  最大值
+   		 -->
+   		<field-validator type="requiredstring" short-circuit="true">
+   			<message>姓名不能为空</message>
+   		</field-validator>
+   		<field-validator type="stringlength">
+   			<param name="minLength">3</param>
+   			<param name="maxLength">10</param>
+   			<message>姓名长度必须${minLength}到${maxLength}</message>
+   		</field-validator>
+   		
+   		<field-validator type="myName">
+   			<param name="myName">zjf</param>
+   			<message>姓名必须包含"zjf"</message>
+   		</field-validator>
+   </field>
+   <field name="age">
+   		<field-validator type="conversion">
+   			<message>${getText(fieldName)} 必须是一个整数</message>
+   		</field-validator>
+   		<field-validator type="int">
+   			<param name="min">18</param>
+   			<param name="max">30</param>
+   			<message key="validate.age">${getText(fieldName)} betwwen ${min} and ${max}</message>
+   		</field-validator>
+   </field>
+   <!--2.非字段的验证  -->
+   
+   <validator type="expression" >
+   		<param name="expression">pass==confirm</param>
+   		<message>输入的密码不一致</message>
+   </validator>
+</validators>

@@ -1,0 +1,10 @@
+1447919730982	Rename resource 'addstudent.jsp'
+1447931223340	Encapsulate field 'contentType'
+1447931226730	Encapsulate field 'fileName'
+1447932964943	Delete element
+1447934041745	Rename resource 'queryallstuent.jsp'
+1447934356522	Rename resource 'queryAll_stuent.jsp'
+1447935067214	Rename resource 'StudentAction-validation.xml'
+1447939074200	Encapsulate field 'code'
+1447941278303	Encapsulate field 'birth'
+1448031445780	Copy file

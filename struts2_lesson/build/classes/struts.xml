@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="student" extends="struts-default" namespace="/">
+	
+		<interceptors>
+			<interceptor-stack name="my">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">true</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="my"></default-interceptor-ref>
+		<default-action-ref name="index"></default-action-ref>
+		
+		<!--student CRUD -->
+		<action name="*_*" class="cn.com.zjf.action.StudentAction"
+			method="{1}">
+
+			<result>/WEB-INF/view/{1}_{2}.jsp</result>
+			<result name="add_student_success" type="redirectAction">input</result>
+			<result name="delete_student_success" type="redirectAction">query_student
+			</result>
+			<result name="save_student_success" type="redirectAction">query_student
+			</result>
+		</action>
+
+		<!--访问input.jsp -->
+		<action name="input">
+			<result>/WEB-INF/view/input.jsp</result>
+		</action>
+		<!--访问index.jsp -->
+		<action name="index">
+			<result>/WEB-INF/view/index.jsp</result>
+		</action>
+		<!-- -->
+		<action name="uploadAction" class="uploadAction.UploadAction">
+			<result>/input.jsp</result>
+		</action>
+	</package>
+
+</struts>

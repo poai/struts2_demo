@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 支持静态方法调用 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<package name="helloWorld" extends="struts-default" namespace="/hello" >
+		<action name="student-input"  class="com.opensymphony.xwork2.ActionSupport" method="execute">
+			<result name="success" type="dispatcher">/WEB-INF/view/input.jsp</result>
+		</action>	
+		<action name="student-save" class="model.Student" method="save">
+			<result name="details">/WEB-INF/view/detials.jsp</result>
+		</action>
+		<action name="student-test" class="model.Student" method="test">
+			<result name="test" type="dispatcher">/test.jsp</result>
+		</action>
+	</package>
+</struts>
